@@ -1,4 +1,8 @@
-- Topics
+# JavaScript Postgres Database
+
+Assignments are located [here](./assignments.md)
+
+# Topics
 - DDL
   - Tables
     - Creating
@@ -10,10 +14,8 @@
     - CRUD
 	- Joins
 
-//////////////////////////////////////////////////
-// Creating table
-//////////////////////////////////////////////////
-
+# Creating a Table
+```
 create sequence cus_seq as integer;
 
 create table customer (
@@ -26,16 +28,15 @@ alter sequence cus_seq owned by customer.customer_id
 insert into customer (customer_name) values ('marty')
 
 select * from customer
+```
+- Use UI to add additional columns
+- Use UI to add foreign keys
 
-// Use UI to add additional columns
-// Use UI to add foreign keys
-
-
-database-1.cosgu9wr5iwp.us-east-1.rds.amazonaws.com
-
-5432
-un: postgres
-pd: Ihgdp51505150!
+# Connect to AWS Postgres
+- Host: database-1.cosgu9wr5iwp.us-east-1.rds.amazonaws.com
+- Port: 5432
+- un: postgres
+- pd: ***
 
 # Package.json
 "type": "module",
