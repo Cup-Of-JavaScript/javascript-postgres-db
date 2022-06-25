@@ -8,7 +8,7 @@
 const { Pool } = require("pg"); // "type": "module" not required.
 
 const SELECT_CUSTOMER = "select * from customer"
-const INSERT_CUSTOMER = "insert into customer (customer_name) values ($1)"
+const INSERT_CUSTOMER = "insert into customer (customer_name) values ($1) returning id"
 const UPDATE_CUSTOMER = "update customer set customer_name = $1 where customer_id = $2"
 const DELETE_CUSTOMER = "delete from customer where customer_id = $1"
 
@@ -62,8 +62,8 @@ const deleteCustomer = async () => {
 };
 
 const main = async () => {
-  await select();
-  //await insert();
+  //await select();
+  await insert();
   //await update();
   //await deleteCustomer();
   process.exit();
