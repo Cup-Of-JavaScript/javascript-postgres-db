@@ -62,8 +62,8 @@ const deleteCustomer = async () => {
 };
 
 const main = async () => {
-  //await select();
-  await insert();
+  await select();
+  //await insert();
   //await update();
   //await deleteCustomer();
   process.exit();
