@@ -7,6 +7,11 @@
 
 const { Pool } = require("pg"); // "type": "module" not required.
 
+const SELECT_CUSTOMER = "select * from customer"
+const INSERT_CUSTOMER = "insert into customer (customer_name) values ($1)"
+const UPDATE_CUSTOMER = "update customer set customer_name = $1 where customer_id = $2"
+const DELETE_CUSTOMER = "delete from customer where customer_id = $1"
+
 const pool = new Pool({
   user: "postgres",
   password: "Ihgdp51505150!",
@@ -17,7 +22,7 @@ const pool = new Pool({
 
 const select = async () => {
   try {
-    let r = await pool.query("select * from customer");
+    let r = await pool.query(SELECT_CUSTOMER);
     console.log(r.rows);
   } catch (err) {
     console.error(err);
@@ -27,7 +32,7 @@ const select = async () => {
 const insert = async () => {
   try {
     let customerName = "Billy";
-    let r = await pool.query("insert into customer (customer_name) values ($1)", [customerName]
+    let r = await pool.query(INSERT_CUSTOMER, [customerName]
     );
     console.log(r.rows);
   } catch (err) {
@@ -39,7 +44,7 @@ const update = async () => {
   try {
     let customerName = "Freddy";
     let customerId = 2;
-    let r = await pool.query("update customer set customer_name = $1 where customer_id = $2", [customerName, customerId]);
+    let r = await pool.query(UPDATE_CUSTOMER, [customerName, customerId]);
     console.log(r.rows);
   } catch (err) {
     console.error(err);
@@ -49,7 +54,7 @@ const update = async () => {
 const deleteCustomer = async () => {
   try {
     let customerId = 2;
-    let r = await pool.query("delete from customer where customer_id = $1", [customerId]);
+    let r = await pool.query(DELETE_CUSTOMER, [customerId]);
     console.log(r.rows);
   } catch (err) {
     console.error(err);
