@@ -1,20 +1,39 @@
-import postgres from 'postgres'
+const { Pool } = require("pg");
 
-const sql = postgres('postgres://postgres:Ihgdp51505150!@localhost:5432/express')
+const pool = new Pool({
+  user: "postgres",
+  password: "Ihgdp51505150!",
+  database: "express",
+  host: "localhost",
+  port: 5432,
+});
 
 const select = async () => {
-    const result = await sql`select * from customer where customer_id = 1`
-    console.log(result[0])
-}
+  try {
+    let r = await pool.query("select * from customer");
+    console.log(r.rows);
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 const insert = async () => {
-    const result = await sql`select * from customer where customer_id = 1`
-    console.log(result[0])
-}
+  try {
+    let customerName = "Billy";
+    let r = await pool.query(
+      "insert into customer (customer_name) values ($1)",
+      [customerName]
+    );
+    console.log(r.rows);
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 const main = async () => {
-    await select()
-    process.exit();
-}
+  //await select();
+  await insert();
+  process.exit();
+};
 
-main()
+main();
