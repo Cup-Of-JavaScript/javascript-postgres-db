@@ -1,6 +1,6 @@
 # JavaScript Postgres Database
 
-Assignments are located [here](./assignments.md)
+Assignments are located [here](./assignments.md).
 
 # Topics
 - DDL
@@ -32,11 +32,11 @@ select * from customer
 - Use UI to add additional columns
 - Use UI to add foreign keys
 
+# Links
+- [Connection to Postgres](https://onestepcode.com/postgres-nodejs-tutorial/)
+
 # Connect to AWS Postgres
 - Host: database-1.cosgu9wr5iwp.us-east-1.rds.amazonaws.com
 - Port: 5432
-- un: postgres
-- pd: ***
-
-# Package.json
-"type": "module",
+- username: postgres
+- password: ***
