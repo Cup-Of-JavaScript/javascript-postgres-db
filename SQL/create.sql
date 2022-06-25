@@ -18,8 +18,6 @@ ALTER TABLE IF EXISTS public.person_type
 	
 alter sequence person_type_seq owned by person_type.person_type_id;
 
-/*---------------------------------------------------------------------------*/
-
 /**
  * person
  */
@@ -75,5 +73,5 @@ drop table person cascade;
 
 /*----------------------------------------------------------------------*/
 
-select * from view_person;
+
  
