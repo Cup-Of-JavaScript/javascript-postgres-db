@@ -3,7 +3,7 @@
 // Auth: Martin Burolla
 // Date: 6/25/2022
 // Desc: Simple data access for Postgres.
-//       Create the customer table as specified in the readme.
+//       Create the customer table as specified in the readme before running this code.
 //
 
 const { Pool } = require("pg"); // "type": "module" not required.
