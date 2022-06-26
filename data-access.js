@@ -6,7 +6,7 @@
 //       Create the customer table as specified in the readme before running this code.
 //
 
-const { Pool } = require("pg"); // "type": "module" not required.
+const { Pool } = require("pg");
 
 const SELECT_CUSTOMER = "select * from customer"
 const INSERT_CUSTOMER = "insert into customer (customer_name) values ($1) returning customer_id"
