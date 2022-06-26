@@ -1,9 +1,9 @@
 # JavaScript Postgres Assignments
 
 Consider the scenario of an old fashion bookstore.  A bookstore can have one to many books.  A Person can belong to a bookstore, and a person has one of the following types:
-    - Employee
-    - Cashier
-    - Stock Person
+  - Employee
+  - Cashier
+  - Stock Person
 
 Here is the ERD for this scenario:
 
