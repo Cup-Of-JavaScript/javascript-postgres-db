@@ -13,7 +13,10 @@ const SELECT_BOOKS_FOR_BOOKSTORE = `select
     join book b on bsb.book_id = b.book_id
     where 
     bs.book_store_id = $1`
-
+const UPDATE_PERSON = "update person set first_name = $1 where person_id = $2"
+const INSERT_BOOK = "insert into book (title, isbn) values ($1, $2) returning book_id"
+const INSERT_BOOK_STORE = "insert into book_store (book_store_name) values ($1) returning book_store_id"
+const INSERT_BOOK_STORE_BOOK = "insert into book_store_book (book_id, book_store_id) values ($1, $2)"
 
 const pool = new Pool({
   user: "postgres",
@@ -34,19 +37,25 @@ const ex14 = async () => {
 }
 
 const ex15 = async () => {
-    console.log('TODO...')
+    let personId = 1
+    let newName = "Johnny"
+    console.log(await updatePerson(personId, newName))
 }
 
 const ex16 = async () => {
-    console.log('TODO...')
+    let bookstoreName = "Book World"
+    console.log(await addBookstore(bookstoreName))
 }
 
 const ex17 = async () => {
-    console.log('TODO...')
+    let newBookTitle = "It Begins Here"
+    let newBookIsbn = "123-12-12344-22-111"
+    let bookStoreId = 1
+    console.log(await addBook(newBookTitle, newBookIsbn, bookStoreId))
 }
 
 const main = async () => {
-    await ex14()
+    await ex17()
     process.exit()
 }
 
@@ -76,7 +85,40 @@ const getBooks = async (bookStoreId) => {
     return retval;
 }
 
+const updatePerson = async (personId, newName) => {
+    let retval = null;
+    try {
+        await pool.query(UPDATE_PERSON, [newName, personId]);
+        let r = await pool.query(SELECT_PERSON, [personId]);
+        retval = r.rows[0]
+    } catch (err) {
+        console.error(err);
+    }
+    return retval;
+}
 
+const addBookstore = async (bookstoreName) => {
+    let retval = null;
+    try {
+        let r = await pool.query(INSERT_BOOK_STORE, [bookstoreName]);
+        retval = r.rows[0]
+    } catch (err) {
+        console.error(err);
+    }
+    return retval;
+}
 
+const addBook = async (title, isbn, bookstoreId) => {
+    let retval = null;
+    try {
+        let r = await pool.query(INSERT_BOOK, [title, isbn]); // book_store
+        let newBookId = r.rows[0].book_id
+        r = await pool.query(INSERT_BOOK_STORE_BOOK, [newBookId, bookstoreId]); // book_store_book
+        retval = newBookId;
+    } catch (err) {
+        console.error(err);
+    }
+    return retval;
+}
 
 main()
