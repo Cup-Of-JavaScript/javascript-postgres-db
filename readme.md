@@ -2,6 +2,10 @@
 
 Assignments are located [here](./assignments.md).
 
+# Getting Started
+- Clone this repo
+- Run `bookstore-create.sql` in your student database
+
 # Topics
 - DDL
   - Tables

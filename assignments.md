@@ -51,7 +51,7 @@ Create a query that returns all the books for the store whose name is Best Books
 
 ## Data Modeling
 
-#### Ex. 11 Lemonade
+#### Ex. 11 Lemonade Sales
 Create a data model for a lemonade stand.  The model keeps track of sales of lemonade.  Lemonade comes in three sizes:
 - Small: $1.00
 - Medium: $2.00
@@ -75,6 +75,8 @@ Users can have balances in one or all of these accounts.  The model should keep 
 ## Data Access
 
 #### Ex. 13
+
+
 
 #### Ex. 14
 
