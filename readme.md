@@ -26,9 +26,9 @@ create sequence cus_seq as integer;
 create table customer (
   customer_id integer not null default nextval('cus_seq'),
   customer_name varchar(50)
-)
+);
 				
-alter sequence cus_seq owned by customer.customer_id
+alter sequence cus_seq owned by customer.customer_id;
 
 // Test it.
 insert into customer (customer_name) values ('marty')
