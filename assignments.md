@@ -87,4 +87,4 @@ Create an arrow function called `updatePerson` that accepts a person id and a fi
 Create an arrow function called `addBookstore` that adds a new bookstore to the bookstore table.
 
 #### Ex. 17 Insert Add New Book
-Create an arrow function called `addBook` that accepts a book title, isbn and bookstore id.  This function must insert into the `book` and `book_store_book` tables.
+Create an arrow function called `addBook` that accepts a book title, isbn and bookstore id.  This function must insert into the `book` and `book_store_book` tables.  This function returns the id of the new book.
