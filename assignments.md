@@ -8,7 +8,7 @@ The assignments for this section are divided into three parts:
 ## Queries
 
 Let's query a model that represents an old fashion brick and mortar bookstore.  A bookstore can have one to many books.  A Person can belong to a bookstore, and a person has one of the following types:
-  - Employee
+  - Manager
   - Cashier
   - Stock Person
 
