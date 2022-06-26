@@ -52,4 +52,6 @@ nbproject
 .idea
 .node_history
 dump.rdb
-serverless
+serverlesss
+
+package-lock.json
