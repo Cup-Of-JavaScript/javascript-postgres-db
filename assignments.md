@@ -52,7 +52,6 @@ Create a query that returns all the books for the store whose name is Best Books
 ## Data Modeling
 
 #### Ex. 11 Lemonade
-
 Create a data model for a lemonade stand.  The model keeps track of sales of lemonade.  Lemonade comes in three sizes:
 - Small: $1.00
 - Medium: $2.00
@@ -64,10 +63,13 @@ Lemonade comes in two flavors:
 
 Customers can purchase any number of drinks for any day.
 
-#### Ex. 12 Car Sales
-Create a data model that keeps track of cars sold in a dealership.  
+#### Ex. 12 Bank Account
+Create a data model for a bank.  The model supports the following account types:
+- Checking
+- Savings
+- Retirement
 
-
+Users can have balances in one or all of these accounts.  The model should keep track of when the accounts have been opened and closed.  Users have a first and last name and a username of their choice.
 
 
 ## Data Access
