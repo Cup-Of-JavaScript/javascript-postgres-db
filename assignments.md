@@ -75,7 +75,7 @@ Users can have balances in one or all of these accounts.  The model should keep 
 ## Data Access
 
 #### Ex. 13 Get Person
-Create an arrow function called `getPerson` that accepts a person id and returns all the informat for a person.
+Create an arrow function called `getPerson` that accepts a person id and returns all the information for a person.
 
 #### Ex. 14 Get Books
 Create an arrow function called `getBooks` that accepts a bookstore id and returns all the books for this bookstore.
