@@ -39,6 +39,7 @@ select * from customer
 # Connect to AWS Postgres
 - Host: database-1.cosgu9wr5iwp.us-east-1.rds.amazonaws.com
 - Port: 5432
+- Maintaince database: stu<YOUR STUDENT ID>
 - username: postgres
 - password: ***
 
