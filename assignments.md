@@ -74,14 +74,17 @@ Users can have balances in one or all of these accounts.  The model should keep 
 
 ## Data Access
 
-#### Ex. 13
+#### Ex. 13 Get Person
+Create an arrow function called `getPerson` that accepts a person id and returns all the informat for a person.
 
+#### Ex. 14 Get Books
+Create an arrow function called `getBooks` that accepts a bookstore id and returns all the books for this bookstore.
 
+#### Ex. 15 Update Person
+Create an arrow function called `updatePerson` that accepts a person id and a first name.  This function updates the first name of the person id passed into this function.
 
-#### Ex. 14
+#### Ex. 16 Insert New Bookstore
+Create an arrow function called `addBookStore` that adds a new bookstore to the bookstore table.
 
-#### Ex. 15
-
-#### Ex. 16
-
-#### Ex. 17
+#### Ex. 17 Add New Book
+Create an arrow function called `addBook` that accepts a book title, isbn and bookstore id.  This function must insert into the `book`, `book_store_book` and `book_store tables`.
