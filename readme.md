@@ -13,17 +13,17 @@ SQL has two main parts:
 - DML (Data Manipulation Language)
 
 DDL
-  - Create & Update 
-    - Tables
-    - Indexes
-    - Sequences
-    - Contraints
+- Create & Update 
+  - Tables
+  - Indexes
+  - Sequences
+  - Contraints
 
 DML
-  - CRUD (Create Recall Update Delete)
-	- Joins
-     - Inner
-     - Outer
+- CRUD (Create Recall Update Delete)
+- Joins
+    - Inner
+    - Outer
 
 # SQL Reference
 ## CRUD
