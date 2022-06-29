@@ -85,9 +85,11 @@ alter sequence cus_seq owned by customer.customer_id;
 
 ```
 
+# Videos
+- [Sequence Counter](https://youtu.be/hpL9C5FWIRk)
+
 # Links
 - [Postgres Queries with pg Library](https://onestepcode.com/postgres-nodejs-tutorial/)
-- [Sequence Counter YouTube](https://youtu.be/hpL9C5FWIRk)
 
 # Connect to AWS Postgres
 - Host: database-1.cosgu9wr5iwp.us-east-1.rds.amazonaws.com
