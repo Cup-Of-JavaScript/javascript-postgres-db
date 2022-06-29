@@ -39,7 +39,7 @@ SQL has two main parts:
 ## Joins
 
 #### Inner
-- `Table A join Table B` reads: Return ONLY the rows that match.
+- `Table A join Table B` reads: Return ONLY the rows that match from Table A and Table B.
 - No reason to specify "inner"
 
 Example:
