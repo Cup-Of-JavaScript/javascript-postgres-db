@@ -65,7 +65,11 @@ Example:
 ![](./docs/outer-join.png)
 
 ## Database Design: Relationships
-#### One to Many
+
+#### ERD (Entity Relationship Diagram)
+Entities are the things (nouns) in your problem domain.  Usually entities are associated with other entities.  This association is referred to as a relationship.
+
+#### Relationship: One to Many
 Example #1: ONE showroom can contain MANY cars.  But one car CANNOT contain many showrooms.
 
 ![](./docs/onetomany-1.png)
@@ -74,7 +78,7 @@ Example #2: ONE customer can have MANY orders and MANY credit cards.  However, O
 
 ![](./docs/onetomany-2.png)
 
-#### Many to Many
+#### Relationship: Many to Many
 Example #1: A book can be sold in MANY bookstores.  A bookstore contains MANY books.
 
 ![](./docs/manytomany.png)
