@@ -29,10 +29,15 @@ Assignments are located [here](./assignments.md).
 ## Joins
 - Inner: Join
   - `A join B` reads: Return ONLY the rows that match.
+
+![](./docs/inner-join.png)
+
 - Outer: Left vs Right
   - Protip: Always prefer one or the other (I prefer left)
     - `B right join A` is the same as `A left join B`
   - `A left join B` reads: Return EVERYTHING from the left table and return nulls from the right table if no match
+
+![](./docs/outer-join.png)
 
 ## Relationships
 - One to Many
