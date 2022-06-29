@@ -12,13 +12,13 @@ SQL has two main parts:
 - DDL (Data Definition Language)
 - DML (Data Manipulation Language)
 
-- DDL
+DDL
   - Create & Update 
     - Tables
     - Indexes
     - Sequences
     - Contraints
-- DML
+DML
   - CRUD (Create Recall Update Delete)
 	- Joins
 
