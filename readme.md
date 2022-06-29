@@ -57,14 +57,18 @@ Example:
 
 ![](./docs/outer-join.png)
 
-## Relationships
-- One to Many
+## Database Design: Relationships
+#### One to Many
+Example #1: ONE showroom can contain MANY cars.  But one car CANNOT contain many showrooms.
 
 ![](./docs/onetomany-1.png)
 
+Example #2: ONE customer can habe MANY orders and MANY credit cards.  However, ONE credit card cannot belong to MANY people, one order cannot be owned by MANY people.
+
 ![](./docs/onetomany-2.png)
 
-- Many to Many
+#### Many to Many
+Example #1: A book can be sold in MANY bookstores.  A bookstore contains MANY books.
 
 ![](./docs/manytomany.png)
 
