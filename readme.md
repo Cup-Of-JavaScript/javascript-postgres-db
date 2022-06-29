@@ -37,9 +37,9 @@ Assignments are located [here](./assignments.md).
 ## Relationships
 - One to Many
 
-![](onetomany-1.png)
+![](./docs/onetomany-1.png)
 
-![](onetomany-2.png)
+![](./docs/onetomany-2.png)
 
 - Many to Many
 
