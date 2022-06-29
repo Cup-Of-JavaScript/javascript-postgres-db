@@ -27,6 +27,8 @@ SQL has two main parts:
 - Select
   - `select * from cat`
   - `select * from cat where age > 5`
+  - `select count(*) from cat`
+  - `select sum(cost) from book`
 - Update
   - `update cat set name = 'Freddy' where cat_id = 1`
 - Insert
