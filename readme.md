@@ -5,7 +5,7 @@ Assignments are located [here](./assignments.md).
 # Getting Started
 - Clone this repo
 - Install dependencies: `npm install`
-- Copy & paste the contents of `bookstore-create.sql` and execute in your database
+- Copy & paste the contents of `bookstore-create.sql` and execute in your database using pgAdmin4
 
 # SQL
 SQL has two main parts:
