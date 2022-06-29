@@ -32,7 +32,7 @@ DML
   - `select sum(cost) from book`
   - `select * from cat order by name desc`
   - `select * from cat where person_id is null`
-  - `select * from cat where name like 'Roc%`
+  - `select * from cat where name like 'Roc%'`
 - Update
   - `update cat set name = 'Freddy' where cat_id = 1`
 - Insert
