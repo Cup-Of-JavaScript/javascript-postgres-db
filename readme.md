@@ -19,7 +19,33 @@ Assignments are located [here](./assignments.md).
     - CRUD
 	- Joins
 
-# Creating a Table
+# SQL Reference
+## CRUD
+- Select
+- Update
+- Insert
+- Delete
+
+## Joins
+- Inner: Join
+  - `A join B` reads: Return ONLY the rows that match.
+- Outer: Left vs Right
+  - Protip: Always prefer one or the other (I prefer left)
+    - `B right join A` is the same as `A left join B`
+  - `A left join B` reads: Return EVERYTHING from the left table and return nulls from the right table if no match
+
+## Relationships
+- One to Many
+
+![](onetomany-1.png)
+
+![](onetomany-2.png)
+
+- Many to Many
+
+![](manytomany-2.png)
+
+# Create Customer Table
 ```
 create sequence cus_seq as integer;
 
@@ -30,12 +56,8 @@ create table customer (
 				
 alter sequence cus_seq owned by customer.customer_id;
 
-// Test it.
-insert into customer (customer_name) values ('marty')
-select * from customer
 ```
-- Use UI to add additional columns
-- Use UI to add foreign keys
+
 
 # Links
 - [Postgres Queries with pg Library](https://onestepcode.com/postgres-nodejs-tutorial/)
