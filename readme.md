@@ -100,7 +100,7 @@ alter sequence cus_seq owned by customer.customer_id;
 A foreign key is a database contraint that states that a key in one table MUST exist in another table.  Foreign keys ensure that our database has referential integrity (our databse doesn't contain junk).
 
 # Videos
-- [Creaet Sequence Counter (5m)](https://youtu.be/hpL9C5FWIRk)
+- [Create Sequence Counter (5m)](https://youtu.be/hpL9C5FWIRk)
 - [Learn Basic SQL in 15 Minutes (15m)](https://youtu.be/kbKty5ZVKMY)
 
 # Links
