@@ -79,7 +79,7 @@ Example #2: ONE customer can have MANY orders and MANY credit cards.  However, O
 ![](./docs/onetomany-2.png)
 
 #### Relationship: Many to Many
-Example #1: A book can be sold in MANY bookstores.  A bookstore contains MANY books.
+Example #1: A book can be sold in MANY bookstores.  A bookstore contains MANY books.  The `bookstore_book` table is a bridge table (or a link or relationship table).  This table links the two entities together to implement a many to many relationship.
 
 ![](./docs/manytomany.png)
 
