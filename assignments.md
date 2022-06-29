@@ -72,7 +72,7 @@ Add this query to the `queries.sql` file in your student directory and submit a 
 ## Data Modeling
 
 #### Ex. 11 Lemonade Sales
-Create a data model for a lemonade stand.  The model keeps track of sales of lemonade.  Lemonade comes in three sizes:
+Create a data model (ERD) for a lemonade stand.  The model keeps track of the sales of lemonade on a given day.  Lemonade comes in three sizes:
 - Small: $1.00
 - Medium: $2.00
 - Large: $3.00
@@ -86,7 +86,7 @@ Customers can purchase any number of drinks for any day.
 Export your ERD to SQL code and update the `data-modeling.sql` file in your student directory, submit a PR.
 
 #### Ex. 12 Bank Account
-Create a data model for a bank.  The model supports the following account types:
+Create a data model (ERD) for a bank.  The model supports the following account types:
 - Checking
 - Savings
 - Retirement
