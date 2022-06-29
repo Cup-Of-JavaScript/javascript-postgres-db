@@ -27,7 +27,8 @@ DML
 ## CRUD
 - Select
   - `select * from cat`
-  - `select * from cat where age > 5 and age < 10`
+  - `select * from cat where age > 5`
+  - `select * from cat where age between 5 and 10`
   - `select count(*) from cat`
   - `select sum(cost) from book`
   - `select * from cat order by name desc`
