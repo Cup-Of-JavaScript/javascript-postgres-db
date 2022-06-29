@@ -18,7 +18,7 @@ DDL
     - Indexes
     - Sequences
     - Contraints
-    
+
 DML
   - CRUD (Create Recall Update Delete)
 	- Joins
@@ -32,6 +32,7 @@ DML
   - `select sum(cost) from book`
   - `select * from cat order by name desc`
   - `select * from cat where person_id is null`
+  - `select * from cat where name like 'Roc%`
 - Update
   - `update cat set name = 'Freddy' where cat_id = 1`
 - Insert
@@ -89,7 +90,8 @@ alter sequence cus_seq owned by customer.customer_id;
 ```
 
 # Videos
-- [Sequence Counter](https://youtu.be/hpL9C5FWIRk)
+- [Creaet Sequence Counter (5m)](https://youtu.be/hpL9C5FWIRk)
+- [Learn Basic SQL in 15 Minutes (15m)](https://youtu.be/kbKty5ZVKMY)
 
 # Links
 - [Postgres Queries with pg Library](https://onestepcode.com/postgres-nodejs-tutorial/)
