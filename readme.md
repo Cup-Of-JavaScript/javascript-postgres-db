@@ -97,7 +97,7 @@ alter sequence cus_seq owned by customer.customer_id;
 ```
 
 # Constraint: Foreign Key
-A foreign key is a database contraint that states that a key in one table MUST exist in another table.  Foreign keys ensure that our database has referential integrity (our databse doesn't contain junk).
+A foreign key is a database contraint that states that a key in one table MUST exist in another table.  Foreign keys ensure that our database has referential integrity (our databse doesn't contain junk).  Foreign keys are automatically created by pgAdmin when we create relationships between entities in our ERDs.
 
 # Videos
 - [Create Sequence Counter (5m)](https://youtu.be/hpL9C5FWIRk)
