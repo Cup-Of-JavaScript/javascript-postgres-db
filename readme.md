@@ -39,7 +39,7 @@ SQL has two main parts:
 ## Joins
 
 #### Inner
-- `Table A join Table B` reads: Return ONLY the rows that match from Table A and Table B.
+- `Table A join Table B`: Return ONLY the rows that match from Table A and Table B.
 - No reason to specify "inner"
 
 Example:
@@ -50,7 +50,7 @@ Example:
 - Left vs Right
   - `Table B right join Table A` is the same as `Table A left join Table B`
     - PROTIP: Prefer one or the other, but not both.  I prefer left join.
-  - `Table A left join Table B` reads: Return EVERYTHING from the left table and return nulls from the right table if no match
+  - `Table A left join Table B`: Return EVERYTHING from the left table and return nulls from the right table if no match
   - No reason to specify "outer" 
 
 Example: 
