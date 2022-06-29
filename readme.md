@@ -37,8 +37,8 @@ Example:
 
 #### Outer
 - Left vs Right
-  - Protip: Always prefer one or the other (I prefer left)
-    - `Table B right join Table A` is the same as `Table A left join Table B`
+  - `Table B right join Table A` is the same as `Table A left join Table B`
+    - PROTIP: Prefer one or the other, but not both.  I prefer left join.
   - `Table A left join Table B` reads: Return EVERYTHING from the left table and return nulls from the right table if no match
 
 Example: 
