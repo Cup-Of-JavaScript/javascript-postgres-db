@@ -18,6 +18,7 @@ DDL
     - Indexes
     - Sequences
     - Contraints
+    
 DML
   - CRUD (Create Recall Update Delete)
 	- Joins
