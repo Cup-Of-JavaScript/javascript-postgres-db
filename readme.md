@@ -30,6 +30,7 @@ Assignments are located [here](./assignments.md).
 
 #### Inner
 - `Table A join Table B` reads: Return ONLY the rows that match.
+- No reason to specify "inner"
 
 Example:
 
@@ -40,6 +41,7 @@ Example:
   - `Table B right join Table A` is the same as `Table A left join Table B`
     - PROTIP: Prefer one or the other, but not both.  I prefer left join.
   - `Table A left join Table B` reads: Return EVERYTHING from the left table and return nulls from the right table if no match
+  - No reason to specify "outer" 
 
 Example: 
 
