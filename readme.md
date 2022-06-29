@@ -22,6 +22,8 @@ DDL
 DML
   - CRUD (Create Recall Update Delete)
 	- Joins
+    - Inner
+    - Outer
 
 # SQL Reference
 ## CRUD
