@@ -5,26 +5,34 @@ Assignments are located [here](./assignments.md).
 # Getting Started
 - Clone this repo
 - Install dependencies: `npm install`
-- Run `bookstore-create.sql` in your student database
+- Copy & paste the contents of `bookstore-create.sql` and execute in your database
 
-# Topics
+# SQL
+SQL has two main parts:
+- DDL (Data Definition Language)
+- DML (Data Manipulation Language)
+
 - DDL
-  - Tables
-    - Creating
-	- Data Types
-  - Indexes
-  - Sequences
+  - Create & Update 
+    - Tables
+    - Indexes
+    - Sequences
+    - Contraints
 - DML
-  - Queries
-    - CRUD
+  - CRUD (Create Recall Update Delete)
 	- Joins
 
 # SQL Reference
 ## CRUD
 - Select
+  - `select * from cat`
+  - `select * from cat where age > 5`
 - Update
+  - `update cat set name = 'Freddy' where cat_id = 1`
 - Insert
+  - `insert into cat (name) values ('Jonesy')`
 - Delete
+  - `delete from cat where cat > 4;`
 
 ## Joins
 
@@ -70,7 +78,6 @@ create table customer (
 alter sequence cus_seq owned by customer.customer_id;
 
 ```
-
 
 # Links
 - [Postgres Queries with pg Library](https://onestepcode.com/postgres-nodejs-tutorial/)
