@@ -51,7 +51,7 @@ Example:
   - `Table B right join Table A` is the same as `Table A left join Table B`
     - PROTIP: Prefer one or the other, but not both.  I prefer left join.
   - `Table A left join Table B`: Return EVERYTHING from the left table and return nulls from the right table if no match
-  - No reason to specify "outer" (e.g. `outer join`)
+  - No reason to specify "outer" (e.g. `outer left join`)
 
 Example: 
 
