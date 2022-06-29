@@ -43,7 +43,7 @@ Assignments are located [here](./assignments.md).
 
 - Many to Many
 
-![](manytomany-2.png)
+![](manytomany.png)
 
 # Create Customer Table
 ```
