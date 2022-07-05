@@ -29,7 +29,7 @@ UPDATE person SET first_name = 'John' WHERE person_id=9;
 /**
  * Ex. 6
  */
-INSERT INTO person (first_name, last_name, dob) VALUES('sally', 'mustang', '1965-02-01');
+INSERT INTO person (first_name, last_name, dob, person_type_id, book_store_id) VALUES('sally', 'mustang', '1965-02-01', 2 , 2);
 
 /**
  * Ex. 7
