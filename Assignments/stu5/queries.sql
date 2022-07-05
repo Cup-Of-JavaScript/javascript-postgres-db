@@ -9,7 +9,7 @@ select * from book where book_id = 4;
 /**
  * Ex. 3
  */
-
+select  person_id, first_name, last_name, dob from person where dob > '1980-09-08';
 /**
  * Ex. 4
  */
