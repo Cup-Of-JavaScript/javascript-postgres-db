@@ -19,7 +19,7 @@ SELECT first_name, last_name FROM person ORDER BY last_name DESC
 /**
  * Ex. 4
  */
-
+SELECT person_id, first_name, last_name, dob FROM person WHERE dob BETWEEN  '1970-08-29' AND '1979-07-10' ;
 /**
  * Ex. 5
  */
