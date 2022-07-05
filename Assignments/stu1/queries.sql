@@ -13,7 +13,7 @@ select * from person where dob between '1980-06-09' and '1988-10-08';
 /**
  * Ex. 4
  */
-
+select * from person where dob between '1970-08-29' and '1979-07-10';
 /**
  * Ex. 5
  */
