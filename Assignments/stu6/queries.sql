@@ -23,7 +23,7 @@ update person set first_name = 'John' where person_id = 9;
  */
 
 /**
- * Ex. 7
+ select count(*) from person where person_type_id = (2);
  */
 
 /**
