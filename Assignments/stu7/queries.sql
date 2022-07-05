@@ -34,6 +34,7 @@ INSERT INTO person (first_name, last_name, dob, person_type_id, book_store_id) V
 /**
  * Ex. 7
  */
+ SELECT COUNT(*) FROM person WHERE person_type_id IN 2;
 
 /**
  * Ex. 8
