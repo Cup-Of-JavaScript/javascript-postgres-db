@@ -26,6 +26,8 @@ select person_id, first_name, last_name, dob from person where dob between '1970
  * Ex. 5
  */
 
+update person set first_name = 'John' where person_id = 9;
+
 /**
  * Ex. 6
  */
