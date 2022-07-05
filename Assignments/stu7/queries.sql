@@ -25,8 +25,7 @@ SELECT person_id, first_name, last_name, dob FROM person WHERE dob BETWEEN  '197
  * Ex. 5
  */
 
-UPDATE person SET first_name = 'John' WHERE person_id=9
-
+UPDATE person SET first_name = 'John' WHERE person_id=9;
 /**
  * Ex. 6
  */
