@@ -20,6 +20,8 @@ select person_id, first_name, last_name, dob from person where dob > '1980-01-01
  * Ex. 4
  */
 
+select person_id, first_name, last_name, dob from person where dob between '1970-01-01' and '1979-12-31';
+
 /**
  * Ex. 5
  */
