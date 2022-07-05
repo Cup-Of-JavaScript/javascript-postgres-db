@@ -3,7 +3,7 @@
  */
 
 /**
- * Ex. 2
+ Select * from book where book_id = (4);
  */
 
 /**
