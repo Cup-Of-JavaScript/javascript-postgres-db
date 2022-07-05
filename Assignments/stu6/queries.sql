@@ -15,7 +15,7 @@
  */
 
 /**
- * Ex. 5
+update person set first_name = 'John' where person_id = 9;
  */
 
 /**
