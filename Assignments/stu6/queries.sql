@@ -1,5 +1,5 @@
 /**
- * Ex. 1
+ select last_name from person des;
  */
 
 /**
