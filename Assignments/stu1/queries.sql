@@ -17,7 +17,7 @@ select * from person where dob between '1970-08-29' and '1979-07-10';
 /**
  * Ex. 5
  */
-
+update person set first_name = 'John' where person_id = 9;
 /**
  * Ex. 6
  */
