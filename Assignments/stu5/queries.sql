@@ -5,7 +5,7 @@ select first_name, last_name from person order by last_name desc;
 /**
  * Ex. 2
  */
-
+select * from book where book_id = 4;
 /**
  * Ex. 3
  */
