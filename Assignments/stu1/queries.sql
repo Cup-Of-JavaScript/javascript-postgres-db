@@ -1,7 +1,7 @@
 /**
  * Ex. 1
  */
-
+select (last_name, first_name) from person order by last_name desc;
 /**
  * Ex. 2
  */
