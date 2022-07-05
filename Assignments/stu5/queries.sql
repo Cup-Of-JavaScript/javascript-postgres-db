@@ -13,7 +13,7 @@ select  person_id, first_name, last_name, dob from person where dob > '1980-09-0
 /**
  * Ex. 4
  */
-
+select  person_id, first_name, last_name, dob from person where dob < '1980-06-09';
 /**
  * Ex. 5
  */
