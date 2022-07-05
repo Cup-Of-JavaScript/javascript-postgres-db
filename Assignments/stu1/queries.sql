@@ -25,7 +25,7 @@ insert into person (person_type_id, book_store_id, first_name, last_name, dob) v
 /**
  * Ex. 7
  */
-
+select count(*) from person where person_type_id = (2);
 /**
  * Ex. 8
  */
