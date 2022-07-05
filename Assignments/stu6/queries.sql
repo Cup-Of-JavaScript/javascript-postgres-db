@@ -7,7 +7,7 @@
  */
 
 /**
- * Ex. 3
+ select * from person where dob between '1981-01-01' and '1990-01-01';
  */
 
 /**
