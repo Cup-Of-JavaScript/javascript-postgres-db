@@ -8,6 +8,8 @@ select first_name, last_name from person order by last_name desc;
  * Ex. 2
  */
 
+select * from book where title = 'Everything I Never Told You';
+
 /**
  * Ex. 3
  */
