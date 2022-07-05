@@ -29,7 +29,7 @@ select * from person where person_type_id = 2;
 /**
  * Ex. 8
  */
-
+select first_name, last_name, person_type_id from person where person_type_id = 1;
 /**
  * Ex. 9
  */
