@@ -9,7 +9,7 @@ Select * from book where title = 'Everything I Never Told You';
 /**
  * Ex. 3
  */
-
+Select  person_id, first_name, last_name, dob from person where dob > '1980-01-01';
 /**
  * Ex. 4
  */
