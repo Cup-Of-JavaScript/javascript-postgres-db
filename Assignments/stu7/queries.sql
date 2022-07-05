@@ -14,6 +14,8 @@ SELECT first_name, last_name FROM person ORDER BY last_name DESC
  * Ex. 3
  */
 
+ SELECT person_id, first_name, last_name, dob FROM person WHERE dob > '1980-01-01';
+
 /**
  * Ex. 4
  */
