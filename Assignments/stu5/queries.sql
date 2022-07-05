@@ -21,7 +21,7 @@ update person set first_name = 'John' where person_id = 9;
 /**
  * Ex. 6
  */
-
+insert into person (person_id, person_type_id, book_store_id, first_name, last_name, dob) values (11, 2, 2,'Sally', 'Mustang', '1965-01-02'); 
 /**
  * Ex. 7
  */
