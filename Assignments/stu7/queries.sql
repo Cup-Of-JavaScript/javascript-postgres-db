@@ -6,6 +6,9 @@ SELECT first_name, last_name FROM person ORDER BY last_name DESC
 /**
  * Ex. 2
  */
+ SELECT * FROM book WHERE title = "Everything I Never Told You"; 
+--  OR
+ SELECT * FROM book WHERE BOOK_ID=4; 
 
 /**
  * Ex. 3
