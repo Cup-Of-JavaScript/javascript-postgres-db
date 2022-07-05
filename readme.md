@@ -105,6 +105,7 @@ A foreign key is a database contraint that states that a key in one table MUST e
 
 # Links
 - [Postgres Queries with pg Library](https://onestepcode.com/postgres-nodejs-tutorial/)
+- [Postgres Data Types](https://www.postgresql.org/docs/current/datatype.html)
 
 # Connect to AWS Postgres
 - Host: database-1.cosgu9wr5iwp.us-east-1.rds.amazonaws.com
