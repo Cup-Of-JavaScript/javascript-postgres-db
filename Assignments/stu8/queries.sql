@@ -2,6 +2,8 @@
  * Ex. 1
  */
 
+select first_name, last_name from person order by last_name desc;
+
 /**
  * Ex. 2
  */
