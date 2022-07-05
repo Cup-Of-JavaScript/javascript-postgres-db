@@ -9,7 +9,7 @@ select * from book where book_id = (4);
 /**
  * Ex. 3
  */
-
+select * from person where dob between '1980-06-09' and '1988-10-08';
 /**
  * Ex. 4
  */
