@@ -40,5 +40,15 @@ where person_type = 'Manager';
  */
 
 /**
- * Ex. 10
+ select
+    bs.book_store_id,
+    b.book_id,
+    bs.book_store_name,
+    b.title,
+    b.isbn
+from book b
+    join book_store_book bsb on b.book_id = bsb.book_id
+    join book_store bs on bsb.book_store_id=bs.book_store_id
+where
+book_store_name = 'Best Books in Town'
  */
