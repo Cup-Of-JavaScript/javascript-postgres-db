@@ -49,3 +49,14 @@ pe.person_type_id = 1;
 /**
  * Ex. 10
  */
+select 
+bsb.book_store_id,
+bsb.book_id,
+bs.book_store_name,
+b.title,
+b.isbn
+from book_store_book bsb
+join book_store bs on bsb.book_store_id = bs.book_store_id
+join book b on bsb.book_id = b.book_id
+where
+bs.book_store_id = 3;
