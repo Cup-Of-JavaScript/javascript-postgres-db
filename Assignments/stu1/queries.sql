@@ -30,11 +30,10 @@ select count(*) from person where person_type_id = (2);
  * Ex. 8
  */
 select 
-  first_name, last_name, person_type
+  p.first_name, p.last_name, per.person_type
 from 
-  person 
-inner join person_type on person.person_id = person_type.person_type_id;
-
+  person p
+inner join person_type per on p.person_id = per.person_type_id;
 /**
  * Ex. 9
  */
