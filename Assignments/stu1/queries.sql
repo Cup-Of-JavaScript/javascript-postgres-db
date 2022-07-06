@@ -34,6 +34,7 @@ select
 from 
   person 
 inner join person_type on person.person_id = person_type.person_type_id;
+
 /**
  * Ex. 9
  */
