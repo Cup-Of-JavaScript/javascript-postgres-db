@@ -29,7 +29,8 @@ Select count(*) from person where person_type_id = 2;
 /**
  * Ex. 8
  */
-
+Select first_name, last_name, person_type from person p
+  join person_type pt on p.person_type_id=pt.person_type_id
 /**
  * Ex. 9
  */
