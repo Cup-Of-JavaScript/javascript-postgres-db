@@ -29,7 +29,12 @@ select * from person where person_type_id = 2;
 /**
  * Ex. 8
  */
-select first_name, last_name, person_type_id from person where person_type_id = 1;
+select 
+p.first_name, 
+p.last_name, 
+pe.person_type 
+from person p
+join person_type pe on p.person_type_id = pe.person_type_id;
 /**
  * Ex. 9
  */
