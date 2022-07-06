@@ -47,7 +47,10 @@ ON p.person_type_id = t.person_type_id;
 /**
  * Ex. 9
  */
-
+select p.first_name, p.last_name, t.person_type
+FROM person p 
+JOIN person_type t ON p.person_type_id = t.person_type_id
+WHERE t.person_type = 'Manager';
 /**
  * Ex. 10
  */
