@@ -29,7 +29,7 @@ select count(*) from person where person_type_id = (2);
 /**
  * Ex. 8
  */
- select 
+select 
   p.first_name, 
   p.last_name, 
   pt.person_type
@@ -38,7 +38,14 @@ from person p
 /**
  * Ex. 9
  */
-
+select 
+  p.first_name, 
+  p.last_name, 
+  pt.person_type
+from person p
+   join person_type pt on p.person_type_id = pt.person_type_id
+where 
+  p.person_type_id = 1;
 /**
  * Ex. 10
  */
