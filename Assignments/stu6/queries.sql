@@ -27,11 +27,16 @@ update person set first_name = 'John' where person_id = 9;
  */
 
 /**
- * Ex. 8
+ select first_name, last_name, person_type from person
+join person_type 
+on person.person_type_id = person_type.person_type_id; 
  */
 
 /**
- * Ex. 9
+ select first_name, last_name, person_type from person
+join person_type 
+on person.person_type_id = person_type.person_type_id
+where person_type = 'Manager'; 
  */
 
 /**
