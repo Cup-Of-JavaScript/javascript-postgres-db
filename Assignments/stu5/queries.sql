@@ -38,7 +38,14 @@ join person_type pe on p.person_type_id = pe.person_type_id;
 /**
  * Ex. 9
  */
-
+select 
+p.first_name, 
+p.last_name, 
+pe.person_type 
+from person p
+join person_type pe on p.person_type_id = pe.person_type_id
+where 
+pe.person_type_id = 1;
 /**
  * Ex. 10
  */
