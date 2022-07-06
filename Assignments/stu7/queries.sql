@@ -54,3 +54,8 @@ WHERE t.person_type = 'Manager';
 /**
  * Ex. 10
  */
+
+SELECT b.* bs.*
+FROM book b 
+JOIN book_store bs ON bs.book_id = b.book_id
+WHERE bs.book_store_name = 'Best Books in Town';
