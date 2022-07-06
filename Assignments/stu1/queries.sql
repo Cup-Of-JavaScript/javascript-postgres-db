@@ -49,3 +49,17 @@ where
 /**
  * Ex. 10
  */
+create view view_book as
+select
+  bs.book_store_id,
+  b.book_id,
+  bs.book_store_name,
+  b.title,
+  b.isbn
+from book_store bs
+join book_store_book bb on bb.book_store_id = bs.book_store_id
+join book b on  b.book_id = bb.book_id
+where 
+  bs.book_store_id = 3;
+  
+select * from view_book;
