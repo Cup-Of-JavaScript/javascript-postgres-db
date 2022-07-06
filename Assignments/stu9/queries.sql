@@ -29,11 +29,23 @@ select count(*) from person where person_type_id = 2;
 /**
  * Ex. 8
  */
-
+select p.first_name, p.last_name, t.person_type
+from person p
+join person_type t
+on p.person_type_id = t.person_type_id
 /**
  * Ex. 9
  */
-
+select p.first_name, p.last_name, t.person_type
+from person p
+join person_type t
+on p.person_type_id = t.person_type_id
+where person_type= 'Manager'
 /**
  * Ex. 10
  */
+select bs.book_store_id,b.book_id,bs.book_store_name,b.title,b.isbn
+from book b
+join book_store_book bsb on b.book_id=bsb.book_id 
+join book_store bs on bsb.book_store_id=bs.book_store_id 
+where bs.book_Store_id = 3
