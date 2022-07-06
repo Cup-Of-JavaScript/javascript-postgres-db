@@ -58,4 +58,4 @@ select
 from book b, book_store_book bb
 join book_store bs on  bb.book_id = bs.book_store_id
 where 
-  bs.book_store_id = 2;
+  bb.book_store_book_id = 2;
