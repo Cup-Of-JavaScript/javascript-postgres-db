@@ -50,7 +50,9 @@ select first_name, last_name, person_type from person p
 /**
  * Ex. 9
  */
-
+select first_name, last_name, person_type from person p
+    join person_type pt on p.person_type_id=pt.person_type_id
+    where pt.person_type = 'Manager'
 /**
  * Ex. 10
  */
