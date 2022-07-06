@@ -21,53 +21,47 @@ const pool = new Pool({
   port: 5432,
 });
 
-const select = async () => {
+exports.select = async () => {
+  let retval = null;
   try {
     let r = await pool.query(SELECT_CUSTOMER);
-    console.log(r.rows);
+    retval = r.rows;
   } catch (err) {
     console.error(err);
   }
+  return retval;
 };
 
-const insert = async () => {
+exports.insert = async (customerName) => {
+  let retval = null;
   try {
-    let customerName = "Billy";
     let r = await pool.query(INSERT_CUSTOMER, [customerName]
     );
-    console.log(r.rows);
+    retval = r.rows;
   } catch (err) {
     console.error(err);
   }
+  return retval;
 };
 
-const update = async () => {
+exports.update = async (customer) => {
+  let retval = null;
   try {
-    let customerName = "Freddy";
-    let customerId = 2;
-    let r = await pool.query(UPDATE_CUSTOMER, [customerName, customerId]);
-    console.log(r.rows);
+    let r = await pool.query(UPDATE_CUSTOMER, [customer.customerName, customer.customerId]);
+    retval = r.rows;
   } catch (err) {
     console.error(err);
   }
+  return retval;
 };
 
-const deleteCustomer = async () => {
+exports.deleteCustomer = async (customerId) => {
+  let retval = null;
   try {
-    let customerId = 2;
     let r = await pool.query(DELETE_CUSTOMER, [customerId]);
-    console.log(r.rows);
+    retval = "OK"
   } catch (err) {
     console.error(err);
   }
+  return retval;
 };
-
-const main = async () => {
-  await select();
-  //await insert();
-  //await update();
-  //await deleteCustomer();
-  process.exit();
-};
-
-main();
