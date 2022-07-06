@@ -110,7 +110,7 @@ A foreign key is a database contraint that states that a key in one table MUST e
 # Connect to AWS Postgres
 - Host: database-1.cosgu9wr5iwp.us-east-1.rds.amazonaws.com
 - Port: 5432
-- Maintaince database: stu{YOUR STUDENT ID}
+- Maintenance database: stu{YOUR STUDENT ID}
 - username: postgres
 - password: ***
 
