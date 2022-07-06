@@ -43,7 +43,9 @@ select
   p.last_name, 
   pt.person_type
 from person p
-   join person_type pt on pt.person_type_id = (1)
+   join person_type pt on p.person_type_id = pt.person_type_id
+where 
+  p.person_type_id = 1;
 /**
  * Ex. 10
  */
