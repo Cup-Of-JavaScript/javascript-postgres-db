@@ -33,7 +33,7 @@ select
   p.first_name, p.last_name, per.person_type
 from 
   person p
-inner join person_type per on p.person_id = per.person_type_id;
+inner join person_type per on p.book_store_id = per.person_type_id;
 /**
  * Ex. 9
  */
