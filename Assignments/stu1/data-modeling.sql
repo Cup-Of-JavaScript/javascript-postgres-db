@@ -24,8 +24,8 @@ CREATE TABLE IF NOT EXISTS public.lemonade
     lemonade_id serial NOT NULL,
     lemonade_size_id integer,
     lemonade_flavors "char" DEFAULT 50,
-    lemonade_total integer,
     date timestamp without time zone,
+    sales integer,
     PRIMARY KEY (lemonade_id)
 );
 
