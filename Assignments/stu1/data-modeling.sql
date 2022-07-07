@@ -13,7 +13,7 @@ insert into size (lemonade_size, lemonade_price) values ('Large', '$3.00');
 insert into lemonade (lemonade_flavor) values ('Lemon');
 insert into lemonade (lemonade_flavor) values ('Strawberry');
 
-SELECT current_date as day;
+select (current_date, count(date)) from lemonade;
 
 CREATE TABLE IF NOT EXISTS public.lemonade
 (
