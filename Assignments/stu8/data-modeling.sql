@@ -49,3 +49,70 @@ END;
 /**
  * Ex. 12
  */
+
+ BEGIN;
+
+
+CREATE TABLE IF NOT EXISTS public.banking
+(
+    banking_id serial NOT NULL,
+    username text,
+    first_name text,
+    last_name text,
+    checking_id smallint,
+    saving_id smallint,
+    retirement_id smallint,
+    PRIMARY KEY (banking_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.checking
+(
+    checking_id serial NOT NULL,
+    balance numeric,
+    date_open date,
+    date_close date,
+    PRIMARY KEY (checking_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.saving
+(
+    saving_id serial NOT NULL,
+    balance numeric,
+    date_open date,
+    date_close date,
+    PRIMARY KEY (saving_id)
+);
+
+CREATE TABLE IF NOT EXISTS public.retirement
+(
+    retirement_id serial NOT NULL,
+    balance numeric,
+    date_open date,
+    date_close date,
+    PRIMARY KEY (retirement_id)
+);
+
+ALTER TABLE IF EXISTS public.banking
+    ADD FOREIGN KEY (checking_id)
+    REFERENCES public.checking (checking_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.banking
+    ADD FOREIGN KEY (saving_id)
+    REFERENCES public.saving (saving_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+
+ALTER TABLE IF EXISTS public.banking
+    ADD FOREIGN KEY (retirement_id)
+    REFERENCES public.retirement (retirement_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
+END;
