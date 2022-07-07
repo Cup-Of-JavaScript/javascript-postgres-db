@@ -5,13 +5,13 @@ const da = require('./data-access.js');
 
 const main = async () => {
     // Select..
-   // let r = await da.select();
+    let r = await da.select();
     
     // Delete...
     //let r = await da.deleteCustomer(2);
 
     // Insert...
-    let r = await da.insert("Dave Jones");
+    // let r = await da.insert("Dave Jones");
 
     // Update...
     // let customer = {

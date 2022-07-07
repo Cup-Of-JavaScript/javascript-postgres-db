@@ -2,8 +2,9 @@
 // File: data-access.js
 // Auth: Martin Burolla
 // Date: 6/25/2022
-// Desc: Simple data access for Postgres.
-//       Create the customer table as specified in the readme before running this code.
+// Desc: Common JS module that acts as the one and only interface to Postgres.
+//       Create the customer table as specified in the readme before using 
+//       this wrapper.
 //
 
 const { Pool } = require("pg");
