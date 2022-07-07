@@ -40,8 +40,7 @@ exports.select = async () => {
 exports.insert = async (customerName) => {
   let retval = null;
   try {
-    let r = await pool.query(INSERT_CUSTOMER, [customerName]
-    );
+    let r = await pool.query(INSERT_CUSTOMER, [customerName]);
     retval = r.rows;
   } catch (err) {
     console.error(err);
