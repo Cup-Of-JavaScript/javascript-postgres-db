@@ -11,6 +11,7 @@ CREATE TABLE IF NOT EXISTS public.lemonade_stand
     lemonade_id serial NOT NULL,
     size_id smallint,
     flavor_id smallint,
+    date date,
     PRIMARY KEY (lemonade_id)
 );
 
