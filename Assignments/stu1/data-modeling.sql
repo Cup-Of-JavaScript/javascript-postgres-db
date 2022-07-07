@@ -13,7 +13,7 @@ insert into size (lemonade_size, lemonade_price) values ('Large', '$3.00');
 insert into lemonade (lemonade_flavor) values ('Lemon');
 insert into lemonade (lemonade_flavor) values ('Strawberry');
 
-select sum(lemonade_size_id) from lemonade as date;
+select count(*) from cat;
 
 CREATE TABLE IF NOT EXISTS public.lemonade
 (
