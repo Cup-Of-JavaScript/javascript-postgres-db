@@ -43,7 +43,7 @@ BEGIN;
 CREATE TABLE IF NOT EXISTS public.bank
 (
     bank_id serial NOT NULL,
-    bank_account text,
+    bank_account_id integer,
     account_balance money,
     date_opened date,
     date_closed date,
@@ -59,6 +59,21 @@ CREATE TABLE IF NOT EXISTS public.users
     username text,
     PRIMARY KEY (user_id)
 );
+
+CREATE TABLE IF NOT EXISTS public.bankaccount
+(
+    bank_account_id serial NOT NULL,
+    bank_account integer,
+    PRIMARY KEY (bank_account_id)
+);
+
+ALTER TABLE IF EXISTS public.bank
+    ADD FOREIGN KEY (bank_account_id)
+    REFERENCES public.bankaccount (bank_account_id) MATCH SIMPLE
+    ON UPDATE NO ACTION
+    ON DELETE NO ACTION
+    NOT VALID;
+
 
 ALTER TABLE IF EXISTS public.users
     ADD FOREIGN KEY (bank_id)
