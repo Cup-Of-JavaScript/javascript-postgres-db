@@ -12,6 +12,8 @@ CREATE TABLE IF NOT EXISTS public.lemonade
     lemonade_size text,
     lemonade_price money,
     flavor_id integer,
+    purchase_date date,
+    number_drinks_purchased integer,
     PRIMARY KEY (lemonade_id)
 );
 
