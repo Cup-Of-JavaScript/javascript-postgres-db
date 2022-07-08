@@ -11,6 +11,11 @@ join book_store_book bsb on bsb.book_store_id = bs.book_store_id
 join book b on b.book_id=bsb.book_id
 where bs. book_store_id = ($1);`
 const UPDATE_PERSON = "update person set first_name = $2 where person_id = $1 returning person_id;"
+const INSERT_BOOK_STORE = 
+`insert into 
+   book_store (book_store_name) 
+values 
+($1) returning book_store_name;`
 
 const { Pool } = require("pg");
 
@@ -38,9 +43,9 @@ exports. ex15 = async () => {
     return await this.updatePerson(personId, newName)
 }
 
-const ex16 = async () => {
+exports.ex16 = async () => {
     let bookstoreName = "Book World"
-    console.log(await addBookstore(bookstoreName))
+    return await addBookstore(bookstoreName)
 }
 
 const ex17 = async () => {
@@ -89,7 +94,12 @@ exports.updatePerson = async (personId, newName) => {
 
 const addBookstore = async (bookstoreName) => {
     let retval = null;
-    // TODO...
+    try {
+        let r = await pool.query(INSERT_BOOK_STORE, [bookstoreName]);
+        retval = r.rows[0];
+      } catch (err) {
+        console.error(err);
+      }
     return retval;
 }
 
