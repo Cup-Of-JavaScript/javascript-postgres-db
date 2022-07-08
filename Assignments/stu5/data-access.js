@@ -3,6 +3,14 @@
 // Date: 6/25/2022
 //
 const GET_PERSON = "select * from person where person_id =($1);"
+const GET_BOOK_STORE_ID = `
+select 
+b.title
+from book_store bs
+join book_store_book bsb on bsb.book_store_id = bs.book_store_id
+join book b on b.book_id=bsb.book_id
+where bs. book_store_id = ($1);`
+
 const { Pool } = require("pg");
 
 const pool = new Pool({
@@ -18,9 +26,9 @@ exports.ex13 = async () => {
     console.log(await this.getPerson(personId))
 }
 
-const ex14 = async () => {
+exports. ex14 = async () => {
     let bookstoreId = 1
-    console.log(await getBooks(bookstoreId))
+    console.log(await this.getBooks(bookstoreId))
 }
 
 const ex15 = async () => {
@@ -56,9 +64,14 @@ exports.getPerson = async (personId) => {
     return retval;
 }
 
-const getBooks = async (bookStoreId) => {
+exports. getBooks = async (bookStoreId) => {
     let retval = null;
-    // TODO...
+    try{
+        let r = await pool.query(GET_BOOK_STORE_ID, [bookStoreId]);
+        retval = r.rows;
+    }catch (err){
+        console.error(err);
+    }
     return retval;
 }
 
