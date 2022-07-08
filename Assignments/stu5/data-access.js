@@ -10,6 +10,7 @@ from book_store bs
 join book_store_book bsb on bsb.book_store_id = bs.book_store_id
 join book b on b.book_id=bsb.book_id
 where bs. book_store_id = ($1);`
+const UPDATE_PERSON = "update person set first_name = $2 where person_id = $1 returning person_id;"
 
 const { Pool } = require("pg");
 
@@ -31,10 +32,10 @@ exports. ex14 = async () => {
     console.log(await this.getBooks(bookstoreId))
 }
 
-const ex15 = async () => {
+exports. ex15 = async () => {
     let personId = 1
     let newName = "Johnny"
-    console.log(await updatePerson(personId, newName))
+    return await this.updatePerson(personId, newName)
 }
 
 const ex16 = async () => {
@@ -75,9 +76,14 @@ exports. getBooks = async (bookStoreId) => {
     return retval;
 }
 
-const updatePerson = async (personId, newName) => {
+exports.updatePerson = async (personId, newName) => {
     let retval = null;
-    // TODO...
+    try {
+      let r = await pool.query(UPDATE_PERSON, [personId, newName]);
+      retval = r.rows[0];
+    } catch (err) {
+      console.error(err);
+    }
     return retval;
 }
 
