@@ -4,6 +4,10 @@
 //
 
 const GET_PERSON = "select * from person where person_id =($1);"
+const GET_BOOKS= `select b.title
+from book b
+join book_store_book bsb on b.book_id=bsb.book_id 
+join book_store bs on bsb.book_store_id=bs.book_store_id where bs.book_Store_id = ($1);`
 
 const { Pool } = require("pg");
 
@@ -20,9 +24,9 @@ exports.ex13 = async () => {
     console.log(await this.getPerson(personId))
 }
 
-const ex14 = async () => {
+exports.ex14 = async () => {
     let bookstoreId = 1
-    console.log(await getBooks(bookstoreId))
+    return await this.getBooks(bookstoreId)
 }
 
 const ex15 = async () => {
@@ -43,10 +47,10 @@ const ex17 = async () => {
     console.log(await addBook(newBookTitle, newBookIsbn, bookStoreId))
 }
 
-// const main = async () => {
-//     await ex13()
-//     process.exit()
-// }
+const main = async () => {
+    await ex14()
+    process.exit()
+}
 
 //
 // Your functions here...
@@ -63,10 +67,16 @@ exports.getPerson = async (personId) => {
     return retval;
 }
 
-const getBooks = async (bookStoreId) => {
+exports.getBooks = async (bookStoreId) => {
     let retval = null;
-    // TODO...
+    try {
+      let r = await pool.query(GET_BOOKS, [bookStoreId]);
+      retval = r.rows;
+    } catch (err) {
+      console.error(err);
+    }
     return retval;
+    
 }
 
 const updatePerson = async (personId, newName) => {
