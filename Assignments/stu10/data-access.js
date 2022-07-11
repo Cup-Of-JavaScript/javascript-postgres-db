@@ -4,18 +4,19 @@
 //
 
 const { Pool } = require("pg");
+const get_person = 'SELECT * FROM person WHERE person_id = ($1);'
 
 const pool = new Pool({
   user: "postgres",
-  password: "Ihgdp51505150!",
-  database: "express",
+  password: "Floor05$",
+  database: "postgres",
   host: "localhost",
   port: 5432,
 });
 
-const ex13 = async () => {
+exports.ex13 = async () => {
     let personId = 1
-    console.log(await getPerson(personId))
+    console.log(await this.getPerson(personId))
 }
 
 const ex14 = async () => {
@@ -42,7 +43,7 @@ const ex17 = async () => {
 }
 
 const main = async () => {
-    await ex17()
+    await ex13()
     process.exit()
 }
 
@@ -50,9 +51,14 @@ const main = async () => {
 // Your functions here...
 //
 
-const getPerson = async (personId) => {
+exports.getPerson = async (personId) => {
     let retval = null;
-    // TODO...
+    try {
+        let r = await pool.query(get_person, [personId]);
+        retval = r.rows;
+      } catch (err) {
+        console.error(err);
+      }
     return retval;
 }
 
@@ -80,4 +86,4 @@ const addBook = async (title, isbn, bookstoreId) => {
     return retval;
 }
 
-main()
+// main()
