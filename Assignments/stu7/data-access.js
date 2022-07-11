@@ -45,10 +45,10 @@ const ex17 = async () => {
     console.log(await addBook(newBookTitle, newBookIsbn, bookStoreId))
 }
 
-// const main = async () => {
-//     await ex13()
-//     process.exit()
-// }
+const main = async () => {
+    await ex14()
+    process.exit()
+}
 
 exports.getPerson = async (personId) => {
     let retval = null;
