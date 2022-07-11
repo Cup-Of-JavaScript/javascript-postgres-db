@@ -57,4 +57,4 @@ from book_store_book bsb
 join book_store bs on bsb.book_store_id = bs.book_store_id
 join book b on bsb.book_id = b.book_id
 where
-bs.book_store_id = 3
+bs.book_store_id = 3;
