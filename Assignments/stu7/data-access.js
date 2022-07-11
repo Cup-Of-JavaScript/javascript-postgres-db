@@ -42,15 +42,15 @@ const ex17 = async () => {
     console.log(await addBook(newBookTitle, newBookIsbn, bookStoreId))
 }
 
-const main = async () => {
-    await ex13()
-    process.exit()
-}
+// const main = async () => {
+//     await ex13()
+//     process.exit()
+// }
 
 exports.getPerson = async (personId) => {
     let retval = null;
     try {
-        let r = await pool.query(SELECT_CUSTOMER);
+        let r = await pool.query(get_person, [personId]);
         retval = r.rows;
       } catch (err) {
         console.error(err);
@@ -82,4 +82,5 @@ const addBook = async (title, isbn, bookstoreId) => {
     return retval;
 }
 
-main()
+// main()
+
