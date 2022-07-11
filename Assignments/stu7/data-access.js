@@ -4,7 +4,9 @@
 //
 
 const { Pool } = require("pg");
+//ex13:
 const get_person = 'SELECT * FROM person WHERE person_id = ($1);'
+//ex14:
 const get_Books = 'SELECT b.* FROM book b JOIN book_store_book sb on b.book_id = sb.book_id JOIN book_store bs on sb.book_store_id=bs.book_store_id WHERE bs.book_Store_id = ($1);'
 
 const pool = new Pool({
@@ -59,10 +61,10 @@ exports.getPerson = async (personId) => {
       return retval;
     };
 
-const getBooks = async (bookStoreId) => {
+    exports.getBooks = async (bookStoreId) => {
     let retval = null;
     try {
-        let r = await pool.query([]);
+        let r = await pool.query(get_Books ,[bookStoreId]);
         retval = r.rows;
       } catch (err) {
         console.error(err);
