@@ -8,7 +8,7 @@ const dataAccess = require('./data-access.js');
 const main = async () => {
      
 
-    let r = await dataAccess.ex14();  // 14, 15, 16
+    let r = await dataAccess.ex15();  // 14, 15, 16
 
 
     // Select..
@@ -21,11 +21,11 @@ const main = async () => {
     // let r = await dataAccess.insert("Dave Jones");
 
     // Update...
-    // let customer = {
+    //  let customer = {
     //     customerName: "Joey",
     //     customerId: 1
-    // }
-    // let r = await dataAccess.update(customer);
+    //  }
+    //let r = await dataAccess.update.ex15(customer);
 
     console.log(r);
     process.exit()
