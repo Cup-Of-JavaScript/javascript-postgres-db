@@ -1,21 +1,19 @@
-//
-// File: data-access.js
-// Date: 6/25/2022
-//
+
 
 const { Pool } = require("pg");
+const GET_PERSON = "select * from person where person_id = ($1);"
 
 const pool = new Pool({
   user: "postgres",
-  password: "Ihgdp51505150!",
-  database: "express",
+  password: "1141821Gagoka!",
+  database: "postgres",
   host: "localhost",
   port: 5432,
 });
 
-const ex13 = async () => {
+exports.ex13 = async () => {
     let personId = 1
-    console.log(await getPerson(personId))
+    console.log(await this.getPerson(personId))
 }
 
 const ex14 = async () => {
@@ -41,18 +39,23 @@ const ex17 = async () => {
     console.log(await addBook(newBookTitle, newBookIsbn, bookStoreId))
 }
 
-const main = async () => {
-    await ex17()
-    process.exit()
-}
+// const main = async () => {
+//     await ex13()
+//     process.exit()
+// }
 
 //
 // Your functions here...
 //
 
-const getPerson = async (personId) => {
+exports.getPerson = async (personId) => {
     let retval = null;
-    // TODO...
+    try {
+        let r = await pool.query(GET_PERSON, [personId]);
+        retval = r.rows;
+    } catch (err) {
+        console.error(err);
+    }
     return retval;
 }
 
@@ -80,4 +83,4 @@ const addBook = async (title, isbn, bookstoreId) => {
     return retval;
 }
 
-main()
+// main()
