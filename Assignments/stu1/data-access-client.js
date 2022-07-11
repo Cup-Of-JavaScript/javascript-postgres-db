@@ -8,7 +8,7 @@ const dataAccess = require('./data-access.js');
 const main = async () => {
      
 
-    let r = await dataAccess.ex15();  // 14, 15, 16
+    let r = await dataAccess.ex16();  // 14, 15, 16
 
 
     // Select..
