@@ -10,6 +10,11 @@ from book b
 join book_store_book bsb on b.book_id=bsb.book_id 
 join book_store bs on bsb.book_store_id=bs.book_store_id where bs.book_Store_id = ($1);`
 const UPDATE_PERSON = "update person set first_name = $2 where person_id = $1 returning person_id, first_name"
+const ADD_BOOKSTORE = `
+  insert into 
+    book_store (book_store_name) 
+  values 
+    ($1) returning book_store_name`
 
 const pool = new Pool({
   user: "postgres",
@@ -37,7 +42,7 @@ exports.ex15 = async () => {
 
 exports.ex16 = async () => {
     let bookstoreName = "Book World"
-    return(await this.addBookstore(bookstoreName))
+    return await this.addBookstore(bookstoreName)
 }
 
 exports.ex17 = async () => {
@@ -48,7 +53,7 @@ exports.ex17 = async () => {
 }
 
 const main = async () => {
-    await ex15()
+    await ex16()
     process.exit()
 }
 
@@ -89,9 +94,14 @@ exports.updatePerson = async (personId, newName) => {
     return retval;
 }
 
-const addBookstore = async (bookstoreName) => {
+exports.addBookstore = async (bookstoreName) => {
     let retval = null;
-    // TODO...
+    try {
+        let r = await pool.query(ADD_BOOKSTORE, [bookstoreName]);
+        retval = r.rows;
+      } catch (err) {
+        console.error(err);
+      }
     return retval;
 }
 
