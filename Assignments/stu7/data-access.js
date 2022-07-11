@@ -47,15 +47,16 @@ const main = async () => {
     process.exit()
 }
 
-//
-// Your functions here...
-//
-
 exports.getPerson = async (personId) => {
     let retval = null;
-    // TODO...
-    return retval;
-}
+    try {
+        let r = await pool.query(SELECT_CUSTOMER);
+        retval = r.rows;
+      } catch (err) {
+        console.error(err);
+      }
+      return retval;
+    };
 
 const getBooks = async (bookStoreId) => {
     let retval = null;
