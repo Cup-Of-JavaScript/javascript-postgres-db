@@ -7,7 +7,9 @@ const { Pool } = require("pg");
 const GET_PERSON = "select * from person where person_id = $1"
 const GET_BOOK = "select bs.book_store_id, bs.book_store_name, b.title from book_store bs join book_store_book bb on bb.book_store_id = bs.book_store_id join book b on  b.book_id = bb.book_id where bs.book_store_id = $1"
 const UPDATE_PERSON = "update person set first_name = $2 where person_id = $1 returning person_id;"
-const ADD_BOOK = "insert into book_store (book_store_name) values ($1)returning book_store_id;"
+const ADD_BOOK = "insert into book_store (book_store_name) values ($1) returning book_store_id;"
+const NEW_BOOK = "insert into book (title, isbn) values ($1, $2);"
+const BOOK_ID = "insert into book_store_book (book_id, book_store_id) values ($3, $4) returning book_store_id;"
 
 const pool = new Pool({
   user: "postgres",
@@ -101,7 +103,15 @@ exports.addBookstore = async (bookstoreName) => {
 
 exports.addBook = async (title, isbn, bookstoreId) => {
     let retval = null;
-    // TODO...
+    try {
+      let r = await pool.query(NEW_BOOK, [title, isbn]);
+      retval = r.rows;
+      let bookId= r.rows[0].bookId;
+      let b = await pool.query(BOOK_ID, [bookstoreId, bookId])
+      retval = b.rows[0];
+    } catch (err) {
+      console.error(err);
+    }
     return retval;
 }
 
