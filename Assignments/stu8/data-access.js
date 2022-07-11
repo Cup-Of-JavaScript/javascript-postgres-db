@@ -14,7 +14,18 @@ const ADD_BOOKSTORE = `
     book_store (book_store_name) 
   values 
     ($1) returning book_store_name`
-
+const ADD_BOOK = 
+    `insert into 
+        book (title, isbn) 
+    values 
+        ($1, $2) 
+    returning book_id;`
+const ADD_BOOK_TO_STORE = 
+    `insert into 
+        book_store_book (book_id, book_store_id) 
+    values 
+      ($1, $2) 
+    returning book_store_book_id;`
 
 const { Pool } = require("pg");
 
@@ -47,17 +58,13 @@ exports.ex16 = async () => {
     return await this.addBookstore(bookstoreName)
 }
 
-const ex17 = async () => {
-    let newBookTitle = "It Begins Here"
-    let newBookIsbn = "123-12-12344-22-111"
-    let bookStoreId = 1
-    console.log(await addBook(newBookTitle, newBookIsbn, bookStoreId))
+exports.ex17 = async () => {
+    let newBookTitle = "To Sleep In A Sea of Stars"
+    let newBookIsbn = "123-12-12344-22-222"
+    let bookStoreId = 3
+    return await this.addBook(newBookTitle, newBookIsbn, bookStoreId)
 }
 
-// const main = async () => {
-//     await ex14()
-//     process.exit()
-// }
 
 //
 // Your functions here...
@@ -108,9 +115,17 @@ exports.addBookstore = async (bookstoreName) => {
     return retval;
 }
 
-const addBook = async (title, isbn, bookstoreId) => {
+exports.addBook = async (title, isbn, bookstoreId) => {
     let retval = null;
-    // TODO...
+    try {
+        let r = await pool.query(ADD_BOOK, [title, isbn]);
+        retval = r.rows;
+        let bookId = r.rows[0].book_id;
+        w = await pool.query(ADD_BOOK_TO_STORE, [bookId, bookstoreId]);
+        retval = w.rows[0];
+      } catch (err) {
+        console.error(err);
+      }
     return retval;
 }
 
