@@ -4,57 +4,65 @@
 //
 
 const { Pool } = require("pg");
+const GET_PERSON = "select * from person where person_id = $1"
+
 
 const pool = new Pool({
   user: "postgres",
-  password: "Ihgdp51505150!",
-  database: "express",
+  password: "2019No1994Ji!",
+  database: "postgres",
   host: "localhost",
   port: 5432,
 });
 
-const ex13 = async () => {
+exports.ex13 = async () => {
     let personId = 1
-    console.log(await getPerson(personId))
+    return await this.getPerson(personId); // <== don't forget this word.
 }
 
-const ex14 = async () => {
+exports.ex14 = async () => {
     let bookstoreId = 1
     console.log(await getBooks(bookstoreId))
 }
 
-const ex15 = async () => {
+exports.ex15 = async () => {
     let personId = 1
     let newName = "Johnny"
     console.log(await updatePerson(personId, newName))
 }
 
-const ex16 = async () => {
+exports.ex16 = async () => {
     let bookstoreName = "Book World"
     console.log(await addBookstore(bookstoreName))
 }
 
-const ex17 = async () => {
+exports.ex17 = async () => {
     let newBookTitle = "It Begins Here"
     let newBookIsbn = "123-12-12344-22-111"
     let bookStoreId = 1
     console.log(await addBook(newBookTitle, newBookIsbn, bookStoreId))
 }
 
-const main = async () => {
-    await ex17()
-    process.exit()
-}
+// const main = async () => {
+//     await ex13()
+//     process.exit()
+// }
 
 //
 // Your functions here...
 //
-
-const getPerson = async (personId) => {
+/*Create an arrow function called getPerson that accepts a person id and returns all the information for a person.*/
+exports.getPerson = async (personId) => {
     let retval = null;
-    // TODO...
+    try {
+        let r = await pool.query(GET_PERSON, [personId]);
+        retval = r.rows;
+    } catch (err) {
+        console.error(err);
+    }
     return retval;
 }
+
 
 const getBooks = async (bookStoreId) => {
     let retval = null;
@@ -80,4 +88,4 @@ const addBook = async (title, isbn, bookstoreId) => {
     return retval;
 }
 
-main()
+//main()
