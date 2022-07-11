@@ -5,6 +5,10 @@
 
 const { Pool } = require("pg");
 const get_person = 'SELECT * FROM person WHERE person_id = ($1);'
+const GET_BOOKS= `select b.title
+from book b
+join book_store_book bsb on b.book_id=bsb.book_id 
+join book_store bs on bsb.book_store_id=bs.book_store_id where bs.book_Store_id = ($1);`
 
 const pool = new Pool({
   user: "postgres",
@@ -19,9 +23,9 @@ exports.ex13 = async () => {
     console.log(await this.getPerson(personId))
 }
 
-const ex14 = async () => {
+exports.ex14 = async () => {
     let bookstoreId = 1
-    console.log(await getBooks(bookstoreId))
+    return (await this.getBooks(bookstoreId))
 }
 
 const ex15 = async () => {
@@ -43,7 +47,7 @@ const ex17 = async () => {
 }
 
 const main = async () => {
-    await ex13()
+    await ex14()
     process.exit()
 }
 
@@ -62,9 +66,14 @@ exports.getPerson = async (personId) => {
     return retval;
 }
 
-const getBooks = async (bookStoreId) => {
+exports.getBooks = async (bookStoreId) => {
     let retval = null;
-    // TODO...
+    try {
+        let r = await pool.query(GET_BOOKS, [bookStoreId]);
+        retval = r.rows;
+      } catch (err) {
+        console.error(err);
+      }
     return retval;
 }
 
