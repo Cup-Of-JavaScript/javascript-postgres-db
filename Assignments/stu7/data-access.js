@@ -50,10 +50,11 @@ const ex16 = async () => {
 }
 
 exports.ex17 = async () => {
-    let newBookTitle = "It Begins Here"
-    let newBookIsbn = "123-12-12344-22-111"
+    let newBookTitle = "Atomic Habits"
+    let newBookIsbn = "123-12-12345-67-890"
     let bookStoreId = 1
     console.log(await addBook(newBookTitle, newBookIsbn, bookStoreId))
+    return await addBook(newBookTitle, newBookIsbn, bookStoreId)
 }
 
 const main = async () => {
@@ -110,7 +111,8 @@ exports.addBook = async (title, isbn, bookstoreId) => {
     try {
       let r = await pool.query(insert_Book,[title, isbn]);
       let bookId = r.rows[0].book_id;
-
+      r = await pool.query(insert_BookStoreBook, [bookId, bookstoreId]);
+      retval = r.rows[i];
     } catch (err) {
       console.error(err);
     }
