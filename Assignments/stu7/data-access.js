@@ -9,6 +9,9 @@ const get_person = 'SELECT * FROM person WHERE person_id = ($1);'
 //ex14:
 const get_Books = 'SELECT b.* FROM book b JOIN book_store_book sb on b.book_id = sb.book_id JOIN book_store bs on sb.book_store_id=bs.book_store_id WHERE bs.book_Store_id = ($1);'
 
+//ex15:
+const update_Person =  'UPDATE person SET first_name = $2 WHERE person_id = $1 RETURNING person_id;'
+
 const pool = new Pool({
   user: "postgres",
   password: "Veggie97!",
@@ -22,12 +25,12 @@ const ex13 = async () => {
     console.log(await This.getPerson(personId))
 }
 
-exports.ex14 = async () => {
+const ex14 = async () => {
     let bookstoreId = 1
     console.log(await this.getBooks(bookstoreId))
 }
 
-const ex15 = async () => {
+exports.ex15 = async () => {
     let personId = 1
     let newName = "Johnny"
     console.log(await updatePerson(personId, newName))
@@ -74,7 +77,12 @@ exports.getPerson = async (personId) => {
 
 const updatePerson = async (personId, newName) => {
     let retval = null;
-    // TODO...
+    try {
+        let r = await pool.query(get_Books ,[bookStoreId]);
+        retval = r.rows;
+      } catch (err) {
+        console.error(err);
+      }
     return retval;
 }
 
