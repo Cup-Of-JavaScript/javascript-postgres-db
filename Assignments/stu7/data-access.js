@@ -33,7 +33,7 @@ const ex14 = async () => {
 exports.ex15 = async () => {
     let personId = 1
     let newName = "Johnny"
-    console.log(await updatePerson(personId, newName))
+    console.log(await this.updatePerson(personId, newName))
 }
 
 const ex16 = async () => {
@@ -49,7 +49,7 @@ const ex17 = async () => {
 }
 
 const main = async () => {
-    await ex14()
+    await ex15()
     process.exit()
 }
 
@@ -75,10 +75,10 @@ exports.getPerson = async (personId) => {
       return retval;
     };
 
-const updatePerson = async (personId, newName) => {
+    exports.updatePerson = async (personId, newName) => {
     let retval = null;
     try {
-        let r = await pool.query(get_Books ,[bookStoreId]);
+        let r = await pool.query(update_Person,[personId, newName]);
         retval = r.rows;
       } catch (err) {
         console.error(err);
