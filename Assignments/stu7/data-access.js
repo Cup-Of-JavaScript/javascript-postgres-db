@@ -13,7 +13,7 @@ const get_Books = 'SELECT b.* FROM book b JOIN book_store_book sb on b.book_id =
 const update_Person =  'UPDATE person SET first_name=$2 WHERE person_id=$1 RETURNING person_id;'
 
 //ex16:
-const insert_Store = 'INSERT INTO book_store (book_store_name) VALUES ($1) RETURNING book_store_name;'
+const insert_Store = 'INSERT INTO book_store (book_store_name) VALUES ($1) RETURNING book_store_id;'
 
 const pool = new Pool({
   user: "postgres",
