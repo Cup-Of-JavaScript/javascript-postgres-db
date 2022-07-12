@@ -90,7 +90,7 @@ exports.getPerson = async (personId) => {
     return retval;
 }
 
-const addBookstore = async (bookstoreName) => {
+exports.addBookstore = async (bookstoreName) => {
     let retval = null;
     try {
         let r = await pool.query(insert_Store,[bookstoreName]);
