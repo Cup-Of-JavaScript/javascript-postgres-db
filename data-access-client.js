@@ -7,7 +7,7 @@ const dataAccess = require('./data-access.js');
 
 const main = async () => {
     // Select..
-    let r = await dataAccess.ex14();
+    let r = await dataAccess.insert();
     
     // Delete...
     //let r = await dataAccess.deleteCustomer(2);
