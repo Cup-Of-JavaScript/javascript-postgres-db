@@ -107,7 +107,13 @@ exports.addBookstore = async (bookstoreName) => {
 
 exports.addBook = async (title, isbn, bookstoreId) => {
     let retval = null;
-    // TODO...
+    try {
+      let r = await pool.query(insert_Book,[title, isbn]);
+      let bookId = r.rows[0].book_id;
+
+    } catch (err) {
+      console.error(err);
+    }
     return retval;
 }
 
