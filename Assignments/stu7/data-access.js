@@ -15,6 +15,10 @@ const update_Person =  'UPDATE person SET first_name=$2 WHERE person_id=$1 RETUR
 //ex16:
 const insert_Store = 'INSERT INTO book_store (book_store_name) VALUES ($1) RETURNING book_store_name;'
 
+//ex17:
+const insert_Book = 'INSERT INTO book (title, isbn) VALUES ($1, $2) RETURNING book_id;'
+const insert_BookStoreBook =  'INSERT INTO book_store_book (book_id, book_store_id) VALUES ($1, $2) RETURNING book_store_book_id;'
+
 const pool = new Pool({
   user: "postgres",
   password: "Veggie97!",
@@ -39,13 +43,13 @@ const ex15 = async () => {
     return await this.updatePerson(personId, newName)
 }
 
-exports.ex16 = async () => {
+const ex16 = async () => {
     let bookstoreName = "Book World"
     console.log(await addBookstore(bookstoreName))
     return await this.addBookstore(bookstoreName)
 }
 
-const ex17 = async () => {
+exports.ex17 = async () => {
     let newBookTitle = "It Begins Here"
     let newBookIsbn = "123-12-12344-22-111"
     let bookStoreId = 1
@@ -53,7 +57,7 @@ const ex17 = async () => {
 }
 
 const main = async () => {
-    await ex15()
+    await ex17()
     process.exit()
 }
 
@@ -90,7 +94,7 @@ exports.getPerson = async (personId) => {
     return retval;
 }
 
-const addBookstore = async (bookstoreName) => {
+exports.addBookstore = async (bookstoreName) => {
     let retval = null;
     try {
         let r = await pool.query(insert_Store,[bookstoreName]);
@@ -101,7 +105,7 @@ const addBookstore = async (bookstoreName) => {
     return retval;
 }
 
-const addBook = async (title, isbn, bookstoreId) => {
+exports.addBook = async (title, isbn, bookstoreId) => {
     let retval = null;
     // TODO...
     return retval;
