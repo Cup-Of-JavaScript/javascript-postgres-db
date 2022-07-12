@@ -1,6 +1,9 @@
 
 const { Pool } = require("pg");
-const UPDATE_PERSON = "update person set first_name = $2 where person_id = $1 returning person_id, first_name"
+const add_Bookstore = `insert into
+book_store (book_store_name)
+values
+($1) returning book_store_name`
 
 const pool = new Pool({
   user: "postgres",
@@ -27,9 +30,9 @@ exports.ex15 = async () => {
    
 }
 
-const ex16 = async () => {
+exports.ex16 = async () => {
     let bookstoreName = "Book World"
-    console.log(await addBookstore(bookstoreName))
+    return await this.addBookstore(bookstoreName)
 }
 
 const ex17 = async () => {
@@ -76,9 +79,14 @@ exports.updatePerson = async (personId, newName) => {
     return retval;
 }
 
-const addBookstore = async (bookstoreName) => {
+exports.addBookstore = async (bookstoreName) => {
     let retval = null;
-    // TODO...
+    try {
+        let r = await pool.query(add_Bookstore, [bookstoreName]);
+        retval = r.rows;
+    } catch (err) {
+        console.error(err);
+    }
     return retval;
 }
 
