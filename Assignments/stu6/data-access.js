@@ -1,10 +1,7 @@
-const Get_Person = "select * from person where person_id = ($1);"
-const Get_Books = `select b.title
-from book b
-join book_store_book bsb on b.book_id = bsb.book_id
-join book_store bs on bsb.book_store_id = bs.book_store_id where bs.book_store_id = ($1);`
 
 const { Pool } = require("pg");
+const UPDATE_PERSON = "update person set first_name = $2 where person_id = $1 returning person_id, first_name"
+
 const pool = new Pool({
   user: "postgres",
   password: "1141821Gagoka!",
@@ -23,10 +20,11 @@ exports.ex14 = async () => {
     return await this.getBooks(bookstoreId)
 }
 
-const ex15 = async () => {
+exports.ex15 = async () => {
     let personId = 1
     let newName = "Johnny"
-    console.log(await updatePerson(personId, newName))
+    return await this.updatePerson(personId, newName)
+   
 }
 
 const ex16 = async () => {
@@ -67,9 +65,14 @@ exports.getBooks = async (bookStoreId) => {
     return retval;
 }
 
-const updatePerson = async (personId, newName) => {
+exports.updatePerson = async (personId, newName) => {
     let retval = null;
-    // TODO...
+    try {
+        let r = await pool.query(UPDATE_PERSON, [personId, newName]);
+        retval = r.rows;
+    } catch (err) {
+        console.error(err);
+    }
     return retval;
 }
 
