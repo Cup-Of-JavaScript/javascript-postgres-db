@@ -1,9 +1,16 @@
-
 const { Pool } = require("pg");
-const add_Bookstore = `insert into
-book_store (book_store_name)
+const new_book = 
+    `insert into
+    book (title, isbn)
 values
-($1) returning book_store_name`
+    ($1, $2);
+    returning book_id;`
+const new_book_id =
+    `insert into 
+    book_store_book (book_id, book_store_id)
+values
+    ($1, $2)
+    returning book_store_book_id`
 
 const pool = new Pool({
   user: "postgres",
@@ -35,11 +42,11 @@ exports.ex16 = async () => {
     return await this.addBookstore(bookstoreName)
 }
 
-const ex17 = async () => {
+exports.ex17 = async () => {
     let newBookTitle = "It Begins Here"
     let newBookIsbn = "123-12-12344-22-111"
     let bookStoreId = 1
-    console.log(await addBook(newBookTitle, newBookIsbn, bookStoreId))
+    return await this.addBook(newBookTitle, newBookIsbn, bookStoreId)
 }
 
 // const main = async () => {
@@ -90,9 +97,16 @@ exports.addBookstore = async (bookstoreName) => {
     return retval;
 }
 
-const addBook = async (title, isbn, bookstoreId) => {
+exports.addBook = async (title, isbn, bookstoreId) => {
     let retval = null;
-    // TODO...
+    try {
+        let r = await pool.query(new_book, [title, isbn]);
+        let bookId = r.rows[0].book_id;
+        s = await pool.query(new_book_id, [bookId, bookstoreId]);
+        retval = s.rows[0];
+    } catch (err) {
+        console.error(err);
+    }
     return retval;
 }
 
