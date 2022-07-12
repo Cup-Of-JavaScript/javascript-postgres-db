@@ -52,7 +52,7 @@ const ex16 = async () => {
 exports.ex17 = async () => {
     let newBookTitle = "Atomic Habits"
     let newBookIsbn = "123-12-12345-67-890"
-    let bookStoreId = 1
+    let bookStoreId = 2
     console.log(await addBook(newBookTitle, newBookIsbn, bookStoreId))
     return await addBook(newBookTitle, newBookIsbn, bookStoreId)
 }
@@ -112,9 +112,9 @@ exports.addBook = async (title, isbn, bookstoreId) => {
       let r = await pool.query(insert_Book,[title, isbn]);
       let bookId = r.rows[0].book_id;
       r = await pool.query(insert_BookStoreBook, [bookId, bookstoreId]);
-      retval = r.rows[i];
-    } catch (err) {
-      console.error(err);
+      retval = r.rows[0];
+    } catch (e) {
+      console.error(e);
     }
     return retval;
 }
